@@ -5,7 +5,7 @@ Dependencies
 -----------
 
 <ul>
-<li>AngularJS (used v1.3.3)</li>
+<li>AngularJS (used v1.2.21)</li>
 <li>JQuery (used v1.11.1)</li>
 </ul>
 
