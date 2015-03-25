@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html ng-app="app">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/ngSwitch.css">
+
+<title>ng-Switch Examples</title>
+<style type="text/css">
+	body {
+		 margin: 30px;
+		 font-family: verdana;
+	}
+
+	table tr:not(:last-child) td {
+		border-bottom: 1px solid #DADADA;
+	}
+
+    .strokeme
+    {
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        font-size: 40px;
+        color: #FFF7CC;
+    }	
+</style>
+</head>
+<body>
+
+	<center>
+
+		<h1 class="strokeme">ng-Switch Examples</h1>
+
+		<br /><br />
+
+		<div ng-controller='mainController'>
+
+			<table style="width: 500px; border: 1px solid #DADADA" cellpadding="10">
+				<tr>
+					<td>Show Splash Screen</td>
+					<td style="text-align: right"><switch data-value="configObj.showSplash"></switch></td>
+				</tr>
+
+				<tr>
+					<td>Show Simple Interface</td>
+					<td style="text-align: right"><switch data-value="configObj.interface"></switch></td>
+				</tr>
+
+				<tr>
+					<td>Auto Configuration</td>
+					<td style="text-align: right"><switch data-value="configObj.autoConfig"></switch></td>
+				</tr>
+
+				<tr>
+					<td>Log All Errors</td>
+					<td style="text-align: right"><switch data-value="configObj.logErrors" data-colors="red|#BABABA" data-ontext="Activated"></switch></td>
+				</tr>
+
+				<tr>
+					<td>Search Engine</td>
+					<td style="text-align: right"><switch data-value="configObj.searchEngine" data-colors="red|#BABABA" data-ontext="Activated"></switch></td>
+				</tr>
+
+				<tr>
+					<td colspan="2" style="text-align: right">
+						<button ng-click="setDefaults()">Set Defaults</button>
+					</td>
+
+				</tr>	
+			</table>
+
+			<pre style="text-align: left; width: 500px; color: green">{{ configObj | json }}</pre>
+
+		</div>
+	</center>
+
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/ngSwitch.js"></script>
+	<script type="text/javascript">
+
+	var app = angular.module('app', ['ngSwitch']);
+	
+	app.controller('mainController', function($scope) {
+		$scope.configObj = { showSplash: false, interface: false, logErrors: false, autoConfig: true, searchEngine: false };
+		var defaults = JSON.parse(JSON.stringify($scope.configObj));
+		
+		$scope.setDefaults = function() {
+			$scope.configObj = JSON.parse(JSON.stringify(defaults));
+		}
+	});
+	
+
+
+	</script>
+</body>
+</html>

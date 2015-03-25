@@ -1,0 +1,42 @@
+div.ngswitch {
+	border: 1px solid #DADADA;
+	height: 16px;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 2px;
+	position: relative;
+	cursor: pointer;
+	font: bold 10px verdana;
+	line-height: 16px;
+	padding-left: 3px;
+	overflow: hidden;
+	text-align: left;
+}
+
+div.ngswitch div {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: inline-block;
+	position: absolute;
+	background-color: white;
+	top: 2px;
+	left: 2px;	
+}
+
+div.ngswitch div > span {
+	height: 16px;
+	width: 16px;
+	background-color: #DADADA;
+	border-radius: 8px;
+	display: inline-block;
+	position: absolute;
+	left: 2px;
+}
+div.ngswitch span.on {
+	background-color: green;
+}
+div.ngswitch > span {
+	display: none;
+	color: #BABABA;
+}
